@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Dummy Service
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /root/my_coda_service/coda_restart.py
+StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target
